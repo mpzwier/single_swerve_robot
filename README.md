@@ -23,6 +23,6 @@ You can start with goal planning if the Nav2 plugin in Rviz2 shows Navigation an
 
 This project incorporates code from ROBOTIS AI Worker
 
-Only the folder [ffw_swerve_drive_controller](https://github.com/ROBOTIS-GIT/ai_worker/tree/main/ffw_swerve_drive_controller) is used.
+The swerve drive controller: [ffw_swerve_drive_controller](https://github.com/ROBOTIS-GIT/ai_worker/tree/main/ffw_swerve_drive_controller) is used.
 
 
