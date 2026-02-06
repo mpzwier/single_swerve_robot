@@ -13,7 +13,7 @@ device on which you want to run this code.
 
 ## Usage
 
-This package can be launched by using the command line:
+This package can be launched by using the command:
 
     ros2 launch single_swerve_robot robot.launch.py
 
