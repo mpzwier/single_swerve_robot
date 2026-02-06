@@ -2,6 +2,9 @@
 
 Required: Ros2 Jazzy, Nav2, Rviz2 and Gazebo Harmonic (Sim)
 
+This package can be launched by using the command line:
+
+    ros2 launch single_swerve_robot robot.launch.py
 
 
 
