@@ -8,8 +8,7 @@ The configurations in this repository assume you have the following prerequisite
 device on which you want to run this code.
 
 1. [ROS Jazzy](https://docs.ros.org/en/jazzy/Installation.html) with the following packages: robot state publisher, joint state broadcaster, robot localization, Nav2, Rviz2 and (GazeboSim Harmonic)
-   `robot_state_publisher`, the `joint_state_broadcaster` and the
-   [ros_control](https://control.ros.org/master/index.html) packages.
+
 2. A working [ROS workspace](https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace.html).
 
 ## Usage
