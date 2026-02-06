@@ -9,7 +9,7 @@ device on which you want to run this code.
 
 1. [ROS Jazzy](https://docs.ros.org/en/jazzy/Installation.html) with the following packages: robot state publisher, joint state broadcaster, robot localization, Nav2, Rviz2 and (GazeboSim Harmonic)
 
-2. A working [ROS workspace](https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace.html).
+2. A working [ROS workspace](https://docs.ros.org/en/jazzy/Tutorials/Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace.html).
 
 ## Usage
 
