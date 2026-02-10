@@ -127,21 +127,21 @@ local_costmap:
       inflation_layer:
         plugin: "nav2_costmap_2d::InflationLayer"
         cost_scaling_factor: 3.0
-        inflation_radius: 0.70
+        inflation_radius: 0.4
       obstacle_layer:
         plugin: "nav2_costmap_2d::ObstacleLayer"
         enabled: True
-        observation_sources: scan
+        observation_sources: scan_masked
         scan:
-          topic: /scan
+          topic: /scan_masked
           max_obstacle_height: 2.0
           clearing: True
           marking: True
           data_type: "LaserScan"
           raytrace_max_range: 3.0
-          raytrace_min_range: 0.1
+          raytrace_min_range: 0.05
           obstacle_max_range: 2.5
-          obstacle_min_range: 0.0
+          obstacle_min_range: 0.05
       always_send_full_costmap: True
 
 global_costmap:
@@ -171,14 +171,14 @@ global_costmap:
           raytrace_max_range: 15.0
           raytrace_min_range: 0.05
           obstacle_max_range: 5.0
-          obstacle_min_range: 0.35
+          obstacle_min_range: 0.05
       static_layer:
         plugin: "nav2_costmap_2d::StaticLayer"
         map_subscribe_transient_local: True
       inflation_layer:
         plugin: "nav2_costmap_2d::InflationLayer"
         cost_scaling_factor: 3.0
-        inflation_radius: 0.7
+        inflation_radius: 0.4 #0.7
       always_send_full_costmap: True
 
 planner_server:
@@ -280,7 +280,7 @@ collision_monitor:
     observation_sources: ["scan"]
     scan:
       type: "scan"
-      topic: "scan"
+      topic: /scan
       min_height: 0.15
       max_height: 2.0
       enabled: True

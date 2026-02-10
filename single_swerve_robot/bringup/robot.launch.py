@@ -17,6 +17,7 @@ def generate_launch_description():
     pkg_share = get_package_share_directory('single_swerve_robot')
     ros_gz_sim_share = get_package_share_directory('ros_gz_sim')
     nav2_launch_file_path = os.path.join(get_package_share_directory('nav2_bringup'),'launch')
+    scan_mask_share = get_package_share_directory('scan_mask_filter')
   
 
     # File paths
@@ -28,6 +29,7 @@ def generate_launch_description():
     nav2_map_path = os.path.join(pkg_share, 'config', 'map.yaml')
     gz_spawn_model_launch_source = os.path.join(ros_gz_sim_share, 'launch', 'gz_spawn_model.launch.py')
     swerve_drive_path = os.path.join(pkg_share, 'config', 'swerve_drive_controllers_params.yaml')
+    scan_mask_launch_source = os.path.join(scan_mask_share, 'launch', 'scan_mask.launch.py')
 
     # Nodes
     robot_state_publisher_node = Node(
@@ -79,7 +81,7 @@ def generate_launch_description():
             'world': 'simple_world',
             'topic': '/robot_description',
             'entity_name': 'swerve_robot',
-            'z': '-0.01',
+            'z': '0.0',
         }.items(),
     )
 
@@ -102,6 +104,10 @@ def generate_launch_description():
         output="screen",
     )
 
+    scan_mask_include = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(scan_mask_launch_source)
+    )
+
  
     return LaunchDescription([
         # Launch arguments
@@ -119,6 +125,7 @@ def generate_launch_description():
         spawn_entity,
         joint_state_broadcaster_spawner,
         swerve_drive_spawner,
+        scan_mask_include,
         
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource([nav2_launch_file_path, '/bringup_launch.py']),

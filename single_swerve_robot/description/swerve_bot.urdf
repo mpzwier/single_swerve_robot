@@ -138,7 +138,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://single_swerve_robot/meshes/Lidar.STL"/>
+        <box size="0.05 0.05 0.05"/>
       </geometry>
       <material name="Blue">
         <color rgba="0 0 1.0 1.0"/>
@@ -149,7 +149,7 @@
   <joint name="lidar_joint" type="fixed">
     <parent link="base_link"/>
     <child link="lidar_link"/>
-    <origin xyz="0.2555 0 0.1156" rpy="0 0 0"/>
+    <origin xyz="0.2555 0 0.05" rpy="0.0 0.0 0.0"/> 
   </joint>
 
   <!-- ROS2 Control -->
@@ -222,12 +222,12 @@
           <horizontal>
             <samples>360</samples>
             <resolution>1.000000</resolution>
-            <min_angle>-1.5708</min_angle>
-            <max_angle>1.5708</max_angle>
+            <min_angle>-3.1415</min_angle>
+            <max_angle>3.1415</max_angle>
           </horizontal>
         </scan>
         <range>
-          <min>0.10</min>
+          <min>0.05</min>
           <max>12.0</max>
           <resolution>0.01000</resolution>
         </range>
