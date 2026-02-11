@@ -18,7 +18,6 @@ def generate_launch_description():
     ros_gz_sim_share = get_package_share_directory('ros_gz_sim')
     nav2_launch_file_path = os.path.join(get_package_share_directory('nav2_bringup'),'launch')
     scan_mask_share = get_package_share_directory('scan_mask_filter')
-  
 
     # File paths
     default_model_path = os.path.join(pkg_share, 'description', 'swerve_bot.urdf')
@@ -107,7 +106,6 @@ def generate_launch_description():
     scan_mask_include = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(scan_mask_launch_source)
     )
-
  
     return LaunchDescription([
         # Launch arguments
@@ -125,7 +123,7 @@ def generate_launch_description():
         spawn_entity,
         joint_state_broadcaster_spawner,
         swerve_drive_spawner,
-        scan_mask_include,
+        #scan_mask_include,
         
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource([nav2_launch_file_path, '/bringup_launch.py']),
